@@ -14,9 +14,8 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.vue$/,
-        loader: 'vue',
-        exclude: /node_modules/,
+        test: /\.css$/,
+        loader: 'style!css',
       },
       {
         test: /\.js$/,
@@ -25,6 +24,19 @@ module.exports = {
         query: {
           presets: ['es2015'],
         },
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        loader: 'file',
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'file',
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue',
+        exclude: /node_modules/,
       },
     ],
   },

@@ -19,12 +19,15 @@
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-loader": "^1.5.0",
     "eslint-plugin-import": "^1.16.0",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
+    "style-loader": "^0.13.1",
     "vue-loader": "^9.5.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "feathers-client": "^1.6.1",
     "socket.io-client": "^1.5.0",
     "vue": "^2.0.1"
