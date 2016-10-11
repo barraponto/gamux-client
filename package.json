@@ -11,6 +11,9 @@
   "devDependencies": {
     "eslint": "^3.7.1",
     "eslint-config-airbnb-base": "^8.0.0",
-    "eslint-plugin-import": "^1.16.0"
+    "eslint-plugin-import": "^1.16.0",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.2",
+    "webpack-node-externals": "^1.5.4"
   }
 }
