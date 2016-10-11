@@ -1,0 +1,16 @@
+{
+  "name": "gamux-client",
+  "version": "0.1.0",
+  "description": "Client for Redux-based games.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Capi Etheriel <barraponto@gmail.com> (https://barraponto.blog.br)",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^1.16.0"
+  }
+}
