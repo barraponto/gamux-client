@@ -13,15 +13,18 @@
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
     "eslint": "^3.7.1",
     "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-loader": "^1.5.0",
     "eslint-plugin-import": "^1.16.0",
     "html-webpack-plugin": "^2.22.0",
-    "webpack": "^1.13.2",
-    "webpack-node-externals": "^1.5.4"
+    "vue-loader": "^9.5.1",
+    "webpack": "^1.13.2"
   },
   "dependencies": {
     "feathers-client": "^1.6.1",
-    "socket.io-client": "^1.5.0"
+    "socket.io-client": "^1.5.0",
+    "vue": "^2.0.1"
   }
 }

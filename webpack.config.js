@@ -1,27 +1,36 @@
-var nodeExternals = require('webpack-node-externals');
-
-
 module.exports = {
   entry: './src/index.js',
   output: {
     path: 'dist',
     filename: 'gamux-client.js',
   },
-  modules: {
+  module: {
     preLoaders: [
       {
         test: /\.js$/,
-        loader: 'eslint-loader'
+        loader: 'eslint',
+        exclude: /node_modules/,
       },
     ],
     loaders: [
       {
+        test: /\.vue$/,
+        loader: 'vue',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
+        exclude: /node_modules/,
         query: {
-          presets: ['es2015']
-        }
+          presets: ['es2015'],
+        },
       },
-    ]
+    ],
+  },
+  vue: {
+    loaders: {
+      js: 'babel',
+    },
   },
 };
