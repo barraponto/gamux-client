@@ -1,5 +1,9 @@
-const io = require('socket.io-client');
-const feathers = require('feathers-client');
+import Vue from 'vue';
+import io from 'socket.io-client';
+import feathers from 'feathers-client';
+
+import UI from './components/app.vue';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const socket = io('http://localhost:3030/');
@@ -7,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .configure(feathers.hooks())
     .configure(feathers.socketio(socket));
 
-  app.io.emit('lobby:list');
-  console.log('this is working');
+  app.ui = new Vue({
+    el: 'body',
+    render: h => h(UI),
+  });
 });
