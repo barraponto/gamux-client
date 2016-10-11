@@ -4,7 +4,8 @@
   "description": "Client for Redux-based games.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch"
   },
   "author": "Capi Etheriel <barraponto@gmail.com> (https://barraponto.blog.br)",
   "license": "GPL-3.0",
@@ -18,5 +19,9 @@
     "html-webpack-plugin": "^2.22.0",
     "webpack": "^1.13.2",
     "webpack-node-externals": "^1.5.4"
+  },
+  "dependencies": {
+    "feathers-client": "^1.6.1",
+    "socket.io-client": "^1.5.0"
   }
 }
