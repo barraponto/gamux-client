@@ -1,6 +1,9 @@
 {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
+  "env": {
+    "browser": true
+  },
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
     ]
 }

@@ -9,6 +9,9 @@
   "author": "Capi Etheriel <barraponto@gmail.com> (https://barraponto.blog.br)",
   "license": "GPL-3.0",
   "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
     "eslint": "^3.7.1",
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-plugin-import": "^1.16.0",

@@ -9,10 +9,19 @@ module.exports = {
   },
   modules: {
     preLoaders: [
-      { test: /\.js$/, loader: 'eslint-loader' },
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader'
+      },
     ],
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015']
+        }
+      },
+    ]
   },
-  externals: [
-    nodeExternals(),
-  ],
 };
