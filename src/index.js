@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import Vue from 'vue';
 import io from 'socket.io-client';
 import feathers from 'feathers-client';
