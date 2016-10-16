@@ -1,22 +1,31 @@
 <script>
-  import io from 'socket.io-client';
-  import feathers from 'feathers-client';
-
+  import app from '../app';
   import Login from './login.vue';
 
-  const socket = io('http://localhost:3030/');
-  const app = feathers()
-    .configure(feathers.hooks())
-    .configure(feathers.socketio(socket))
-    .configure(feathers.authentication(
-      {storage: window.localStorage}));
+  const registerUser = (vm) => (result) => { 
+    vm.user = result.data.email;
+  };
 
   export default {
-    components: {
-      login: Login
+    data(){
+      return {
+        user: null,
+      }
     },
-    data: function(){
-      return {}
+    mounted(){
+      app.authenticate()
+        .then(registerUser(this))
+        .catch(() => {/* let user authenticate with login component */});
+
+      // reauthenticate on transport upgrade, see https://docs.feathersjs.com/authentication/client.html
+      app.io.io.engine.on('upgrade', () => {
+        app.authenticate()
+          .then(registerUser(this))
+          .catch(() => {/* @TODO: figure out what to do. */});
+      });
+    },
+    components: {
+      login: Login,
     },
     methods: {
       onLogin(data){
@@ -25,10 +34,10 @@
           email: data.email,
           password: data.password
         })
-        .then(result => { console.log(result); })
-        .catch(error => { console.log(error); });
-      }
-    }
+          .then(registerUser(this))
+          .catch(error => { /* @TODO: show an error */ });
+      },
+    },
   }
 </script>
 
@@ -36,10 +45,7 @@
   <div id="gamux-client" class="container">
     <div class="jumbotron">
       <h1>Welcome to Gamux</h1>
-      <login v-on:login="onLogin"></login>
+      <login @login="onLogin" v-if="!user"></login>
     </div>
   </div>
 </template>
-
-<style>
-</style>
